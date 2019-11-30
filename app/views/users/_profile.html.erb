@@ -1,0 +1,17 @@
+
+<div class="media">
+  <div class="col-sm-3">
+    <img class="mr-2 rounded" src="<%= gravatar_url(user, { size: 40 }) %>" alt="">
+  </div>
+  <div class="media-body">
+    <div class="col-sm-9">
+      <h2><%= user.user_name %></h2>
+      <p>Follow 00<br> Followed 00</p>
+    </div>
+    <div class="col-sm-12">
+      <p>joined on <%= user.created_at %></p>
+      <p><%= user.user_profile %></p>
+    </div>
+        <!-- ここにeditボタン -->
+    </div>
+</div>
