@@ -12,6 +12,8 @@
       <p>joined on <%= user.created_at %></p>
       <p><%= user.user_profile %></p>
     </div>
-        <!-- ここにeditボタン -->
+      <div class="text-center">
+        <%= link_to 'Edit', edit_user_path, class: 'btn btn-outline-secondary btn-sm' %>
+      </div>
     </div>
 </div>
