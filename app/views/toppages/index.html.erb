@@ -1,5 +1,12 @@
 <% if logged_in? %>
-  <p>ログイン完了ユーザ: <%= current_user.user_name %></p>
+   <div class="row">
+     <aside class="col-sm-4">
+      <%= render 'posts/newposts' %>
+    </aside>
+    <div class="col-sm-8">
+      <%= render 'posts/posts', posts: @posts %>
+    </div>
+  </div>
 <% else %>
 
   <div class="text-center">

@@ -9,7 +9,7 @@
       <p>Follow 00<br> Followed 00</p>
     </div>
     <div class="col-sm-12">
-      <p>joined on <%= user.created_at %></p>
+      <p>joined on <%= user.created_at.to_date.strftime("%Y年%m月%d日") %></p>
       <p><%= user.user_profile %></p>
     </div>
       <div class="text-center">
