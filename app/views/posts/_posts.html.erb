@@ -9,7 +9,8 @@
         <div>
           <p class="mb-0"><%= post.content %></p>
         </div>
-        <div>
+        <div class="btn-group">
+          <%= render 'favorites/fav_button', post: post %>
           <% if current_user == post.user %>
             <%= link_to "Delete", post, method: :delete, data: { confirm: "削除しますか？" }, class: 'btn btn-outline-danger btn-sm' %>
           <% end %>
