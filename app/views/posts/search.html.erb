@@ -1,0 +1,17 @@
+<div class="row">
+  <aside class="col-sm-4">
+    <%= render 'posts/newposts' %>
+  </aside>
+  <div class="col-sm-8">
+    <h2>Searched by <%= params[:content] %></h2>
+    Hit数: <%= @count_searched %>
+    <%= form_with url: search_posts_path, method: :get, local: true do |f| %>
+      <div class="form-inline">
+        <%= f.text_field :content, class: 'form-control mr-sm-2', placeholder: 'Search' %>
+        <%= f.submit :search, class: 'btn btn-outline-success my-2 my-sm-0' %>
+      </div>
+    <% end %>
+    <br>
+    <%= render 'posts/posts', posts: @posts %>
+  </div>
+</div>

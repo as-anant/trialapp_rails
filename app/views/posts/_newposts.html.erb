@@ -1,6 +1,7 @@
 <%= form_with(model: @post, local: true) do |f| %>
   <div class="form-group">
     <%= f.text_area :content, class: 'form-control', rows: 5 %>
+      <%= f.file_field :img, class: 'image' %>
     <div class="btn-group d-flex" role="group">
       <%= f.datetime_select :actioned_at, {}, class: 'form-control btn btn-outline-secondary btn-sm ' %>
     </div>

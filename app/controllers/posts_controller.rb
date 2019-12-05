@@ -20,6 +20,15 @@ class PostsController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
   
+  def search
+    if params[:content].present?
+      @posts = Post.where('content LIKE ?', "%#{params[:content]}%").order(actioned_at: :desc).page(params[:page])
+    else
+      @posts = Post.none.page(params[:page])
+    end
+    @count_searched = @posts.count
+  end
+  
   private
 
   def post_params

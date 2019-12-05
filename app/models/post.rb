@@ -6,4 +6,6 @@ class Post < ApplicationRecord
   
   has_many :favorites, foreign_key: 'post_id', dependent: :destroy
   has_many :users, through: :favorites, source: :user
+  
+  mount_uploader :img, ImageUploader
 end

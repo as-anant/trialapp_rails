@@ -4,13 +4,15 @@
       <li class="media">
         <img class="mr-2 rounded" src="<%= gravatar_url(user, { size: 50 }) %>" alt="">
         <div class="media-body">
-          <div>
-            <%= user.user_name %>
-            <!-- ここにフォロー／アンフォローボタン　-->
+          <div class="d-inline-flex justify-content-end">
+            <h3><%= link_to user.user_name, user_path(user) %></h3>
+            <div class="ml-3 mr-3">
+              <% unless current_user == user %>
+                <%= render 'relationships/follow_button', user: user %>
+              <% end %>
+            </div>
           </div>
-          <div>
             <p><%= user.user_profile %></p>
-          </div>
         </div>
       </li>
     <% end %>
